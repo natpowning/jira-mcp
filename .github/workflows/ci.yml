@@ -76,6 +76,7 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to npmjs
         if: steps.semantic.outputs.new_release_published == 'true'
@@ -84,3 +85,4 @@ jobs:
           npm publish --access public --registry https://registry.npmjs.org
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPMJS_TOKEN }}
