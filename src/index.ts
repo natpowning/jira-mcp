@@ -47,9 +47,9 @@ function loadDotEnv() {
 
 loadDotEnv();
 
-const JIRA_BASE_URL = process.env.JIRA_BASE_URL;
-const JIRA_EMAIL = process.env.JIRA_EMAIL;
-const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
+const JIRA_BASE_URL = process.env.JIRA_BASE_URL ?? process.env.JIRA_HOST ?? process.env.JIRA_URL;
+const JIRA_EMAIL = process.env.JIRA_EMAIL ?? process.env.JIRA_USER_EMAIL;
+const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN ?? process.env.JIRA_TOKEN;
 
 if (!JIRA_BASE_URL || !JIRA_EMAIL || !JIRA_API_TOKEN) {
   console.error(
