@@ -23,66 +23,6 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that 
 | `list_sprints` | List sprints for a board |
 | `get_sprint_issues` | Get issues in a sprint |
 
-## Setup
-
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Build
-
-```bash
-npm run build
-```
-
-### 3. Configure Jira credentials
-
-Copy the example env file and fill in your values:
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env`:
-
-```
-JIRA_BASE_URL=https://yourcompany.atlassian.net
-JIRA_EMAIL=you@example.com
-JIRA_API_TOKEN=your-api-token-here
-```
-
-Generate an API token at: https://id.atlassian.com/manage-profile/security/api-tokens
-
-### 4. Register with VS Code / Copilot
-
-Add this to your **VS Code settings** (`.vscode/settings.json` in your project, or your user settings):
-
-```jsonc
-{
-  "mcp": {
-    "servers": {
-      "jira": {
-        "command": "node",
-        "args": ["/absolute/path/to/jira/dist/index.js"],
-        "env": {
-          "JIRA_BASE_URL": "https://yourcompany.atlassian.net",
-          "JIRA_EMAIL": "you@example.com",
-          "JIRA_API_TOKEN": "your-api-token-here"
-        }
-      }
-    }
-  }
-}
-```
-
-Replace the path and credentials with your actual values. Once configured, Copilot will automatically discover and offer the Jira tools in chat.
-
-### Alternative: Use `.env` file
-
-If you prefer not to put credentials in settings, ensure the `.env` file is in the working directory when the server starts. The server reads it automatically.
-
 ## Usage Examples
 
 Once configured, you can ask Copilot things like:
@@ -93,11 +33,3 @@ Once configured, you can ask Copilot things like:
 - *"Create a new bug in PROJ for the login timeout issue"*
 - *"Move PROJ-789 to In Review"*
 - *"What's in the current sprint?"*
-
-## Development
-
-```bash
-npm run dev    # watch mode — rebuilds on change
-npm run build  # one-time build
-npm start      # run the server
-```
