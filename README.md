@@ -33,3 +33,40 @@ Once configured, you can ask Copilot things like:
 - *"Create a new bug in PROJ for the login timeout issue"*
 - *"Move PROJ-789 to In Review"*
 - *"What's in the current sprint?"*
+
+## Developing
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v22+
+- npm
+
+### Install dependencies
+
+```sh
+npm install
+```
+
+### Build
+
+```sh
+npm run build
+```
+
+To rebuild on file changes:
+
+```sh
+npm run dev
+```
+
+### Run tests
+
+```sh
+npm test
+```
+
+To run tests in watch mode during development:
+
+```sh
+npm run test:watch
+```
