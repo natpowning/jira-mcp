@@ -1,28 +1,6 @@
 # Jira MCP Server
 
-A very simple [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that lets Copilot and other AI agents interact with Jira.  A primary goal of this project is to intentionally remain small such that users can quickly audit the code to confirm it only does what it should and nothing more.
-
-
-## Tools Provided
-
-| Tool | Description |
-|---|---|
-| `get_issue` | Fetch full details for an issue by key |
-| `search_issues` | Search with JQL |
-| `get_issue_comments` | Read comments on an issue |
-| `add_comment` | Post a comment (suggestions, notes, etc.) |
-| `create_issue` | Create a new issue |
-| `update_issue` | Update fields (summary, description, priority, labels, assignee) |
-| `get_transitions` | List available status transitions |
-| `transition_issue` | Move an issue to a new status |
-| `assign_issue` | Assign or unassign an issue |
-| `find_users` | Search users by name/email (for getting account IDs) |
-| `list_projects` | List accessible projects |
-| `link_issues` | Link two issues together |
-| `add_worklog` | Log time on an issue |
-| `list_boards` | List Scrum/Kanban boards |
-| `list_sprints` | List sprints for a board |
-| `get_sprint_issues` | Get issues in a sprint |
+A very simple [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that lets Copilot and other AI agents interact with Jira.  A primary goal of this project is to intentionally remain small such that users can quickly audit the code to confirm it only does what it should, and nothing more.
 
 ## Usage Examples
 
@@ -37,23 +15,26 @@ Once configured, you can ask Copilot things like:
 
 ## VS Code Quick Start
 
-1. In VS Code, open the Command Palette and run **MCP Servers: Open** (or open the **MCP Servers** view from the Copilot/MCP UI).
-2. Select **Add Server**.
-3. When prompted for the server package, enter:
+1. In VS Code, open the Command Palette and run **MCP: Add Server...**
+2. Select **Add Server...**
+3. Select **NPM Package**
+4. When prompted for the ***Package Name***, enter:
 
 	```
 	@natpowning/jira-mcp
 	```
+5. Select Allow to install the package
+6. Enter the configuration values as prompted in the following order.
 
-4. Add the required configuration values:
-
-	- `JIRA_BASE_URL`: `https://yourcompany.atlassian.net`
-	- `JIRA_EMAIL`: `you@yourcompany.com`
-	- `JIRA_API_TOKEN`: `<your Jira API token>`
+	- Jira instance URL
+	- Jira account email address (`you@yourcompany.com`)
+	- Your Jira API token: Generate [here](https://id.atlassian.com/manage-profile/security/api-tokens)
+  - Server ID
 
 After saving, Copilot can call the Jira tools listed above through this MCP server.
 
-## Copilot Instructions
+
+### Copilot Instructions
 
 If your repository uses a `copilot-instructions.md`, add a short section describing what this MCP server can do so agents know which tools exist and when to use them.
 
@@ -79,6 +60,28 @@ When asked about Jira work:
 - Use `get_issue` to confirm status/assignee before acting.
 - Use `add_comment` for status updates and coordination notes.
 ```
+
+## Tools Provided
+
+| Tool | Description |
+|---|---|
+| `get_issue` | Fetch full details for an issue by key |
+| `search_issues` | Search with JQL |
+| `get_issue_comments` | Read comments on an issue |
+| `add_comment` | Post a comment (suggestions, notes, etc.) |
+| `create_issue` | Create a new issue |
+| `update_issue` | Update fields (summary, description, priority, labels, assignee) |
+| `get_transitions` | List available status transitions |
+| `transition_issue` | Move an issue to a new status |
+| `assign_issue` | Assign or unassign an issue |
+| `find_users` | Search users by name/email (for getting account IDs) |
+| `list_projects` | List accessible projects |
+| `link_issues` | Link two issues together |
+| `add_worklog` | Log time on an issue |
+| `list_boards` | List Scrum/Kanban boards |
+| `list_sprints` | List sprints for a board |
+| `get_sprint_issues` | Get issues in a sprint |
+
 
 ## Developing
 
