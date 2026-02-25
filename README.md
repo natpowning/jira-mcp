@@ -2,16 +2,6 @@
 
 A very simple [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that lets Copilot and other AI agents interact with Jira.  A primary goal of this project is to intentionally remain small such that users can quickly audit the code to confirm it only does what it should, and nothing more.
 
-## Usage Examples
-
-Once configured, you can ask Copilot things like:
-
-- *"What's the status of PROJ-123?"*
-- *"Search for open bugs assigned to me in the BACKEND project"*
-- *"Add a comment on PROJ-456 suggesting we refactor the auth module"*
-- *"Create a new bug in PROJ for the login timeout issue"*
-- *"Move PROJ-789 to In Review"*
-- *"What's in the current sprint?"*
 
 ## VS Code Quick Start
 
@@ -26,12 +16,24 @@ Once configured, you can ask Copilot things like:
 5. Select Allow to install the package
 6. Enter the configuration values as prompted in the following order.
 
-	- Jira instance URL
-	- Jira account email address (`you@yourcompany.com`)
-	- Your Jira API token: Generate [here](https://id.atlassian.com/manage-profile/security/api-tokens)
-  - Server ID
+	- Jira instance URL (eg. `https://COMPANY.atlassian.net`)
+	- Jira account email address (eg. `you@yourcompany.com`)
+	- Jira API token: Generate [here](https://id.atlassian.com/manage-profile/security/api-tokens)
+    - Server ID (eg. jira-mcp-yourcompany)
 
 After saving, Copilot can call the Jira tools listed above through this MCP server.
+
+## Usage Examples
+
+Once configured, you can ask Copilot things like:
+
+- *"What's the status of PROJ-123?"*
+- *"Search for open bugs assigned to me in the BACKEND project"*
+- *"Add a comment on PROJ-456 suggesting we refactor the auth module"*
+- *"Create a new bug in PROJ for the login timeout issue"*
+- *"Move PROJ-789 to In Review"*
+- *"What's in the current sprint?"*
+- *"Using multiple agents, decomp the Jira epic WEBUI-123 into subtasks and open pull requests for each subtask while keeping status and progress updated in the tasks moving from TODO, through In Progress, and Ready for Review."
 
 
 ### Copilot Instructions
